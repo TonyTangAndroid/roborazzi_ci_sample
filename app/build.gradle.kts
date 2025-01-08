@@ -2,16 +2,17 @@ plugins {
   alias(libs.plugins.com.android.application)
   alias(libs.plugins.org.jetbrains.kotlin.android)
   alias(libs.plugins.roborazzi.plugin)
+  alias(libs.plugins.compose.compiler)
 }
 
 android {
   namespace = "com.github.takahirom.roborazzi.compare.on.github.comment"
-  compileSdk = 33
+  compileSdk = 35
 
   defaultConfig {
     applicationId = "com.github.takahirom.roborazzi.compare.on.github.comment"
     minSdk = 21
-    targetSdk = 33
+    targetSdk = 34
     versionCode = 1
     versionName = "1.0"
 
@@ -37,15 +38,13 @@ android {
   buildFeatures {
     compose = true
   }
-  composeOptions {
-    kotlinCompilerExtensionVersion = "1.3.2"
-  }
   packaging {
     resources {
       excludes += "/META-INF/{AL2.0,LGPL2.1}"
     }
   }
 
+  @Suppress("UnstableApiUsage")
   testOptions {
     unitTests {
       isIncludeAndroidResources = true
