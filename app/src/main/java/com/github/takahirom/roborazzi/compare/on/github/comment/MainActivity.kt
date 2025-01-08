@@ -28,13 +28,10 @@ class MainActivity : ComponentActivity() {
   }
 }
 
-/**
- * test 123
- */
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
   Text(
-    text = "Hello $name!",
+    text = "Hi $name",
     style = MaterialTheme.typography.displayLarge,
     modifier = modifier
       .wrapContentHeight()
